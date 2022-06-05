@@ -43,7 +43,9 @@ pip3 uninstall pocsuite3
 git clone https://github.com/1derian/pocsuite3_pro.git
 cd pocsuite3_pro
 pip3 install -r requirements.txt
+python3 setup.py install
 
+pocsuite -v
 ```
 
 ## 使用
@@ -51,7 +53,8 @@ pip3 install -r requirements.txt
 直接使用fofa语句 , 批量检测 cve-2022-26134 , 并将结果保存到 res.txt
 
 ```
-python3 cli.py -r ./pocs/cve-2022-26134.py  --dork-fofa app="ATLASSIAN-Confluence"  --max-size 500 --save-file ./Confluence_res.txt --threads 30
+cd pocsuite3
+pocsuite -r ./pocs/cve-2022-26134.py  --dork-fofa app="ATLASSIAN-Confluence"  --max-size 500 --save-file ./Confluence_res.txt --threads 30
 ```
 
 ![image](https://user-images.githubusercontent.com/64243067/172038969-c0363f87-5d12-4486-8b81-b4c918613b3b.png)
